@@ -8,7 +8,12 @@ public class CoffeeShopMenu {
 	Scanner sc = new Scanner(System.in);
 	int total = 0;
 	int coupon = 0;
+	
 	public void Menu() {
+		for(int i=0; i<8; i++) {
+			coffeeshop[i] = new CoffeeShop();
+		}
+	
 		coffeeshop[0].setName("아메리카노 Hot");
 		coffeeshop[0].setPrice(1500);
 		coffeeshop[1].setName("아메리카노 ice");
