@@ -1,5 +1,5 @@
 package One;
-import One.login;
+
 import One.CoffeeShop;
 import java.util.Scanner;
 
@@ -8,6 +8,10 @@ public class CoffeeShopMenu {
 	Scanner sc = new Scanner(System.in);
 	int total = 0;
 	int coupon = 0;
+	String gc;
+	int l = 0;
+	private String id = "hanna"; 
+	private int pwd = 1234;
 
 	public void Menu() {
 		for(int i=0; i<8; i++) {
@@ -45,7 +49,7 @@ public class CoffeeShopMenu {
 			menuNum = sc.nextInt();
 
 			switch(menuNum) {
-			case 1 : order(); break;
+			case 1 : order();break;
 			case 2 : pay(); break;
 			case 3 : System.out.println("프로그램을 종료합니다.");	break;
 			default : System.out.println("잘못 입력하셨습니다. 다시 입력해주세요.");	break;
@@ -60,6 +64,10 @@ public class CoffeeShopMenu {
 		System.out.println("-------------------");
 		int choice = sc.nextInt();
 		if(choice == 1) {
+			l++;
+			if(l == 3) {
+				coupon++;
+			}
 			Coffee();
 		}else if(choice == 2) {
 			smoothies();
@@ -82,8 +90,10 @@ public class CoffeeShopMenu {
 			System.out.println("1.네(500원 추가)" + ", 2.아니요");
 			int b = sc.nextInt();
 			if(b == 1) {
+				gc = gc + coffeeshop[0].getName();
 				total = total + coffeeshop[0].getPrice() + 500;
 			}else if(b == 2) {
+				gc = gc + coffeeshop[0].getName();
 				total = total + coffeeshop[0].getPrice() + 500;
 			}else {
 				System.out.println("잘못 입력하셧습니다. 다시입력해주세요.");
@@ -93,8 +103,10 @@ public class CoffeeShopMenu {
 			System.out.println("1.네(500원 추가)" + ", 2.아니요");
 			int b = sc.nextInt();
 			if(b == 1) {
+				gc = gc + coffeeshop[1].getName();
 				total = total + coffeeshop[1].getPrice() + 500;
 			}else if(b == 2) {
+				gc = gc + coffeeshop[1].getName();
 				total = total + coffeeshop[1].getPrice() + 500;
 			}else {
 				System.out.println("잘못 입력하셧습니다. 다시입력해주세요.");
@@ -105,8 +117,10 @@ public class CoffeeShopMenu {
 			int b = sc.nextInt();
 
 			if(b == 1) {
+				gc = gc + coffeeshop[2].getName();
 				total = total + coffeeshop[2].getPrice() + 500;
 			}else if(b == 2) {
+				gc = gc + coffeeshop[2].getName();
 				total = total + coffeeshop[2].getPrice() + 500;
 			}else {
 				System.out.println("잘못 입력하셧습니다. 다시입력해주세요.");
@@ -116,8 +130,10 @@ public class CoffeeShopMenu {
 			System.out.println("1.네(500원 추가)" + ", 2.아니요");
 			int b = sc.nextInt();
 			if(b == 1) {
+				gc = gc + coffeeshop[3].getName();
 				total = total + coffeeshop[3].getPrice() + 500;
 			}else if(b == 2) {
+				gc = gc + coffeeshop[3].getName();
 				total = total + coffeeshop[3].getPrice() + 500;
 			}else {
 				System.out.println("잘못 입력하셧습니다. 다시 입력해주세요.");
@@ -160,5 +176,23 @@ public class CoffeeShopMenu {
 		System.out.println("====== 결제 목록 ======"); 
 		System.out.println("총 결제 금액은 : " + total + "원 입니다.");
 		System.out.println("--------------------");
+		login();
+	}
+	public void login() {
+		System.out.println("회원이십니까? 1.회원.2.비회원");
+		int c= sc.nextInt();
+		if(c == 1) {
+			System.out.println("아이디를 입력해주세요 : ");
+			String ip1 = sc.next();
+			System.out.println("비밀번호를 입력해주세요 : ");
+			int pw1 = sc.nextInt();
+			if(ip1.equals(id) && pw1 == pwd) { //스트링값은 무조건 equals로  비교한다
+			System.out.println(coupon + "장 사용 가능합니다.");
+			}else {
+				System.out.println("아이디 혹은 비밀번호를 잘못 입력하셨습니다.");
+			}
+		}else {
+		System.out.println("안녕히 가십시오.");
+		}
 	}
 }
