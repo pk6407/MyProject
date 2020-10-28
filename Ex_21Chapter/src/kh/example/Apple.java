@@ -3,6 +3,9 @@ package kh.example;
 import java.util.ArrayList;
 import java.util.List;
 
+import kh.example.Coffee.CoffeeType;
+import kh.example.ddasda.RequestMethod;
+
 public class Apple {
 
 	public static void main(String[] args) {
@@ -84,13 +87,50 @@ public class Apple {
 		int[][] m1 = new int[2][];	//A
 		m1[0] = new int[] {1,2,3};	//B
 		m1[1] = new int[] {4,5,6};	//C
-		
+
 		//행
 		for(int i = 0; i < 2; i++) {
 			//열
 			for(int j= 0; j < 3; j++) {
 				System.out.println(m1[i][j]);
 			}
+
+			//enum 선언
+			/* enum 열거형이름{
+			 * 값
+			 * }
+			 */
 		}
+			System.out.println(RequestMethod.CONNECT.name());
+			System.out.println(RequestMethod.CONNECT.ordinal());
+		
+			//클래스 선언
+			//접근지정자 class 클래스이름{
+			//접근지정자 변수명
+			
+			//추상화
+			//객체를 모델링하는 기법인데
+			//필요한 특징만 추출한데
+			//데이터
+			//행동
+			//클래스 이름 객체 = new 클래스이름(생성자 내용);
+			//객체.메소드(인자);
+			
+			//캡슐화
+			//데이터의 직접적인 조작을 막음
+			//객체 정보가 오염됨
+			//객체가 참고하는 값이 오염되면 행동에 영향을 끼침.
+			
+			//접근지정자(Access Modifier)
+			//private:스코프가 객체 내부
+			//protected:스코프가 패키지 내부
+			//public :스코프가 전체
+			
+			//상속
+			//부모의 특성을 물려 받는 행위
+			//부모객체 - 상위객체,superclass
+			//자식객체 - 하위객체,subclass
+			
+			//다형성(polymorphism)
 	}
 }
